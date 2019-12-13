@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>POEtal Turret</title>
+		<link rel="icon" href="images/favicon.jpg">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+
+  <body class="is-preload landing">
+    <div id="page-wrapper">
+      <!-- Header -->
+        <header id="header">
+          <!-- <h1 id="logo"><a href="index.html">POEtal Turret</a></h1> -->
+          <h1 id="logo"><a href="index.html"><img src="images/banner-logo.png" style="height:100px"></a></h1>
+          <!-- <span class="image"><img src="images/half_crop.jpg" alt="" /></span> -->
+          <nav id="nav">
+            <ul>
+              <li><a href="index.html" class="button primary">Home</a></li>
+              <li>
+                <a href="#">Subsystems</a>
+                <ul>
+                  <li><a href="mech_subsys.html">Mechanical Subsystem</a></li>
+                  <li><a href="elec_subsys.html">Electrical Subsystem</a></li>
+                  <li><a href="soft_subsys.html">Software Subsystem</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Sprints</a>
+                <ul>
+                  <li><a href="https://drive.google.com/open?id=1IopE0trOVqYSj_atU-Yuo8QQKYuwY-tvlFy2ETuFBBc" target="_blank">Sprint 1 Review</a></li>
+                  <li><a href="https://drive.google.com/open?id=1T6xGTKO6RBiW-VsYKbFJ6e-qHVAX9c5OrFcKXGVP7Pk" target="_blank">Sprint 2 Review</a></li>
+                  <li><a href="https://drive.google.com/open?id=1vOlH57CKwGJ5ktoJZIWsWLPVCKesHZlkCxQTwfZ_fOc" target="_blank">Sprint 3 Review</a></li>
+                  <li><a href="https://drive.google.com/open?id=1TnYN_wsE-mClaOPI9iMbr0pF_WDt1o6d3QNjLuCNtq0" target="_blank">Final Pitch</a></li>
+                </ul>
+              </li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="budget.html">Budget</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        <!-- Main -->
+          <div id="main" class="wrapper style1">
+            <div class="container">
+              <header class="major">
+                <h2>Software</h2>
+                <p>We had two primary pieces to our software subsystem - low-level firmware that ran on the Arduino and high-level software that ran on the Intel Euclid. The high-level software used ROS to connect the various parts of the project together and dealt with things like person tracking, switching between robot states, and providing an interface for the user to work with while the low-level firmware dealt with sending appropriate PWM values to the motors in order to execute the high-level commands. This page describes in detail the software architecture at work to make our project run. All of our code as well as dependencies and setup instructions can be found on our GitHub.</p>
+              </header>
+
+							<style>
+							.center{
+								margin-left: auto;
+								margin-right: auto;
+							}
+							</style>
+							<div class="center">
+							<ul class="actions">
+								<center><li><a href="https://github.com/AmyPhung/portal_turret" class="button primary">Visit our Github!</a></li></center>
+							</ul>
+						</div>
+              <!-- Text -->
+                <section>
+                  <header>
+  									<h3>Low-level Firmware</h3>
+  									<h4>The firmware we wrote can be viewed in the src folder of our repo.
+
+                        <br />Here is a list of files and their function:</h4>
+                        <p>
+                        <br />msgs.h - contains a data structure to save the robot commands in both a numerical and a string format
+                        <br />driveBase.h/.cpp - contains a class for interfacing with the robot. Basically translates an incoming message in the format listed in msgs.h to valid PWM values for the robot. A proportional controller for each wheel can also be found in this file.
+                        <br />turret_base.h/.ino - the main Arduino code. Listens for serial input from the high-level code and parses the input to create a properly formatted robotCmd message (format is listed in msgs.h). Passes this message along to the DiffDriveRobot class to move the motors
+</p>
+<br>
+<br>
+  								</header>
+                </section>
+                <section>
+                  <h3>High-level Software</h3>
+                  <h4>This is how the software works for the POEtal Turret.</h4>
+
+                      <p>
+                        <br />1. The user clicks a button on the GUI
+                        <br />2. On the backend, the GUI updates the ROS topic /state with what the current state of the robot should be
+                        <br />3. On the backend, there is a state controller continuously listening to /state for updates to the robot’s state
+                        <br />4. For simple states, the state controller calls the appropriate behavior function
+                        <br />5. The behavior function outputs a properly formatted command
+                        <br />6. The state controller publishes that command to the ROS topic /cmd_vel
+                        <br />7. On the backend, there is a script continuously listening to the topic /cmd_vel and reformatting those messages to arduino serial commands and sending them to the Arduino.
+                        <br />8. For more complex behaviors like the following behavior and the joystick teleoperation behavior, these commands each have scripts that continuously run in the background. Each of these scripts has its own ROS node and they each publish commands labeled with their appropriate state to /state_controller/cmd_vel.
+                        <br />9. For the more complex behaviors, instead of calling a behavior function when the state matches, it forwards the appropriate commands from /state_controller/cmd_vel to /cmd_vel
+                      </p>
+
+
+
+
+                </section>
+
+              </div>
+            </div>
+
+          <!-- Footer -->
+
+
+        </div>
+
+        <!-- Scripts -->
+          <script src="assets/js/jquery.min.js"></script>
+          <script src="assets/js/jquery.scrolly.min.js"></script>
+          <script src="assets/js/jquery.dropotron.min.js"></script>
+          <script src="assets/js/jquery.scrollex.min.js"></script>
+          <script src="assets/js/browser.min.js"></script>
+          <script src="assets/js/breakpoints.min.js"></script>
+          <script src="assets/js/util.js"></script>
+          <script src="assets/js/main.js"></script>
+
+  </body>
+</html>
