@@ -24,7 +24,7 @@
           <nav id="nav">
             <ul>
               <li><a href="index.html" class="button primary">Home</a></li>
-							<li><a href="sys_overview.html" class="primary">System Overview</a></li>
+              <li><a href="sys_overview.html" class="primary">System Overview</a></li>
               <li>
                 <a href="#">Subsystems</a>
                 <ul>
@@ -53,19 +53,37 @@
           <div id="main" class="wrapper style1">
             <div class="container">
               <header class="major">
-                <h2>Elements</h2>
-                <p>Ipsum dolor feugiat aliquam tempus sed magna lorem consequat accumsan</p>
+                <h2>System Overview</h2>
+                <p>Because system integration is always a priority</p>
               </header>
 
               <!-- Text -->
                 <section>
-                  <h3>Text</h3>
                   <header>
-  									<h3>Heading with a Subtitle</h3>
-  									<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+                    <h3>System Diagram</h3>
+  									<p>Our system primarily consisted of high-level software running on an Intel Euclid, low-level software running on an Arduino, and audio-related software running on a RasPi.
+                    All of the systems were powered off of a single 3S lipo with 5V voltage regulators in place where needed to provide logic power to the appropriate components.
+                    Below is a diagram of our full system with major power and signal connections between all of our components. Major code blocks are also indicated on the diagram to show how
+                    different components communicate with each other
+                    and </p>
+										<center><div class="col-12"><span class="image"><img src="images/POEtal_Turret_Block_Diagram.jpg" alt=""/></span></div></center>
+                    <p>Subsystem-specific details can be found on each of the subsystem pages linked below</p>
+
+                    <style>
+                    .center{
+                      display: flex;
+                      justify-content: center;
+                    }
+                    </style>
+                    <div class="center">
+                    <ul class="actions">
+                      <center><li><a href="mech_subsys.html" class="button primary">Mechanical Subsystem</a></li></center>
+                      <center><li><a href="elec_subsys.html" class="button primary">Electrical Subsystem</a></li></center>
+                      <center><li><a href="soft_subsys.html" class="button primary">Software Subsystem</a></li></center>
+                    </ul>
+                    </div>
   								</header>
                 </section>
-
               </div>
             </div>
 

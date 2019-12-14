@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>POEtal Turret</title>
+		<link rel="icon" href="images/favicon.jpg">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+
+  <body class="is-preload landing">
+    <div id="page-wrapper">
+      <!-- Header -->
+        <header id="header">
+          <!-- <h1 id="logo"><a href="index.html">POEtal Turret</a></h1> -->
+          <h1 id="logo"><a href="index.html"><img src="images/banner-logo.png" style="height:100px"></a></h1>
+          <!-- <span class="image"><img src="images/half_crop.jpg" alt="" /></span> -->
+          <nav id="nav">
+            <ul>
+              <li><a href="index.html" class="button primary">Home</a></li>
+							<li><a href="sys_overview.html" class="primary">System Overview</a></li>
+              <li>
+                <a href="#">Subsystems</a>
+                <ul>
+                  <li><a href="mech_subsys.html">Mechanical Subsystem</a></li>
+                  <li><a href="elec_subsys.html">Electrical Subsystem</a></li>
+                  <li><a href="soft_subsys.html">Software Subsystem</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Sprints</a>
+                <ul>
+                  <li><a href="https://drive.google.com/open?id=1IopE0trOVqYSj_atU-Yuo8QQKYuwY-tvlFy2ETuFBBc" target="_blank">Sprint 1 Review</a></li>
+                  <li><a href="https://drive.google.com/open?id=1T6xGTKO6RBiW-VsYKbFJ6e-qHVAX9c5OrFcKXGVP7Pk" target="_blank">Sprint 2 Review</a></li>
+                  <li><a href="https://drive.google.com/open?id=1vOlH57CKwGJ5ktoJZIWsWLPVCKesHZlkCxQTwfZ_fOc" target="_blank">Sprint 3 Review</a></li>
+                  <li><a href="https://drive.google.com/open?id=1TnYN_wsE-mClaOPI9iMbr0pF_WDt1o6d3QNjLuCNtq0" target="_blank">Final Pitch</a></li>
+                </ul>
+              </li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="budget.html">Budget</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        <!-- Main -->
+          <div id="main" class="wrapper style1">
+            <div class="container">
+              <header class="major">
+                <h2>Electrical Subsystem</h2>
+                <p>Our electrical subsystem primarily consists of components that we used to power our high-current motors for the shooter, voltage regulators to power all of our logic components, and components to power our audio subsystem. </p>
+              </header>
+
+              <!-- Text -->
+                <section>
+                  <header>
+                  <!-- One -->
+                    <section id="one" class="spotlight style1 bottom">
+                      <span class="image fit main"><img src="images/motor.jpg" alt="" /></span>
+                      <div class="content">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-4 col-12-medium">
+                              <header>
+                                <h2>Powering High-powered Motors</h2>
+                              </header>
+                            </div>
+                            <div class="col-4 col-12-medium">
+                              <p>In order to make a more powerful shooter, we wanted to include motors that had a higher RPM and stall torque, but in order to do this we needed to find another way to power them since the motor shield could only support motors up to 1A but our new motors could draw up to 30A. Our solution to this problem was to purchase MOSFET boards which could support this higher current draw and added extra wiring to connect them to the Arduino for signal and the lipo for power.</p>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+
+
+                  <!-- Text -->
+                    <section>
+                      <header>
+                      <!-- One -->
+                        <section id="one" class="spotlight style1 bottom">
+                          <span class="image fit main"><img src="images/shooter.JPG" alt="" /></span>
+                          <div class="content">
+                            <div class="container">
+                              <div class="row">
+                                <div class="col-4 col-12-medium">
+                                  <header>
+                                    <h2>Powering Logic Components</h2>
+                                  </header>
+                                </div>
+                                <div class="col-4 col-12-medium">
+                                  <p>Our logic components - namely the Arduino, Euclid and Pi - required 5 volts to run properly. The voltage regulators we had on hand could support 5V at 3A, but since these components combined drew more than 3A, we needed to include several 5V regulators to sufficiently power all of these components. The LED ring light and the servo both also needed 5 volts but would brown out the Arduino if we tried to power them off the Arduino, so we included another regulator for those components as well. During our project, we ran into issues where these regulators would overheat and output less than 5V causing our components to shut down, so we needed to add fans and heatsinks to actively cool these components down.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+
+
+                        <!-- Text -->
+                          <section>
+                            <header>
+                            <!-- One -->
+                              <section id="one" class="spotlight style1 bottom">
+                                <span class="image fit main"><img src="images/hopper.JPG" alt="" /></span>
+                                <div class="content">
+                                  <div class="container">
+                                    <div class="row">
+                                      <div class="col-4 col-12-medium">
+                                        <header>
+                                          <h2>Audio System</h2>
+                                        </header>
+                                      </div>
+                                      <div class="col-4 col-12-medium">
+                                        <p>We figured that if we fully wanted to capture the character of the sentry turret that inspired our project, we were going to need to give it a voice. We were initially planning on running the audio setup off of a raspberry pi with software for speech recognition and audio playback from a database of voice lines from the game. We soon found, however, that the pi did not have anywhere near the power capacity to run our 2x 10W @ 8 Ohm stereo speakers, so we went back to the drawing board and started designing a breakout shield to house an audio amp as well as an IMU that gave the turret perception of when he was falling over so he could cry out in agony. The shield was fabricated on PCB with the IMU interfacing over SPI and a 3.5mm stereo audio interface to a TPA3136 stereo amplifier IC with filtering on the output to eliminate any significant noise over our direct line to the speakers.
+
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </section>
+
+                              <!-- Text -->
+                                <section>
+                                  <header>
+                                  <!-- One -->
+                                    <section id="one" class="spotlight style1 bottom">
+                                      <span class="image fit main"><img src="images/Shell.JPG" alt="" /></span>
+                                      <div class="content">
+                                        <div class="container">
+                                          <div class="row">
+                                            <div class="col-4 col-12-medium">
+                                              <header>
+                                                <h2>Shell</h2>
+                                              </header>
+                                            </div>
+                                            <div class="col-4 col-12-medium">
+                                              <p>The finishing casing of the turret was made out of thermoformed plastic. To get the clean glossy aesthetic the interior of the plastic was spray painted white. Letting the clear plastic on the outside smooth the color and provide a glossy finish. The shell casings were then mounted to the turret magnetically to facilitate ease of removal to service the interior electronics.
+      </p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </section>
+
+                  </header>
+                </section>
+
+              </div>
+            </div>
+
+
+
+        </div>
+
+        <!-- Scripts -->
+          <script src="assets/js/jquery.min.js"></script>
+          <script src="assets/js/jquery.scrolly.min.js"></script>
+          <script src="assets/js/jquery.dropotron.min.js"></script>
+          <script src="assets/js/jquery.scrollex.min.js"></script>
+          <script src="assets/js/browser.min.js"></script>
+          <script src="assets/js/breakpoints.min.js"></script>
+          <script src="assets/js/util.js"></script>
+          <script src="assets/js/main.js"></script>
+
+  </body>
+</html>

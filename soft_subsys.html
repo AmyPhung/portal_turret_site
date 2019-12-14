@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <!--
 	Landed by HTML5 UP
 	html5up.net | @ajlkn
@@ -24,6 +24,7 @@
           <nav id="nav">
             <ul>
               <li><a href="index.html" class="button primary">Home</a></li>
+              <li><a href="sys_overview.html" class="primary">System Overview</a></li>
               <li>
                 <a href="#">Subsystems</a>
                 <ul>
@@ -48,28 +49,39 @@
           </nav>
         </header>
 
+
         <!-- Main -->
           <div id="main" class="wrapper style1">
             <div class="container">
               <header class="major">
-                <h2>Software</h2>
-                <p>We had two primary pieces to our software subsystem - low-level firmware that ran on the Arduino and high-level software that ran on the Intel Euclid. The high-level software used ROS to connect the various parts of the project together and dealt with things like person tracking, switching between robot states, and providing an interface for the user to work with while the low-level firmware dealt with sending appropriate PWM values to the motors in order to execute the high-level commands. This page describes in detail the software architecture at work to make our project run. All of our code as well as dependencies and setup instructions can be found on our GitHub.</p>
+                <h2>Software subsystem</h2>
+                <p>The software subsystem was composed of the turret’s
+                  low-level and high-level code to run the robot's motors and
+                  audio system.</p>
               </header>
 
-							<style>
-							.center{
-								margin-left: auto;
-								margin-right: auto;
-							}
-							</style>
-							<div class="center">
-							<ul class="actions">
-								<center><li><a href="https://github.com/AmyPhung/portal_turret" class="button primary">Visit our Github!</a></li></center>
-							</ul>
-						</div>
+              <style>
+              .center{
+                display: flex;
+                justify-content: center;
+              }
+              </style>
+              <p>We had two primary pieces to our software subsystem - low-level firmware that ran on the Arduino and high-level software that ran on the Intel Euclid. The high-level software used ROS to connect the various parts of the project together and dealt with things like person tracking, switching between robot states, and providing an interface for the user to work with while the low-level firmware dealt with sending appropriate PWM values to the motors in order to execute the high-level commands. This page describes in detail the software architecture at work to make our project run. All of our code as well as dependencies and setup instructions can be found on our GitHub.</p>
+              <div class="center">
+              <ul class="actions">
+                <center><li><a href="https://github.com/AmyPhung/portal_turret" class="button primary">Visit our GitHub!</a></li></center>
+              </ul>
+              </div>
+              <div class="col-12"><span class="image fit"><img src="images/code.jpg" alt=""/></span></div>
+
+
+        <!-- Main -->
+          <div id="main" class="wrapper style1">
+            <div class="container">
               <!-- Text -->
                 <section>
                   <header>
+                    <div class="col-4"><span class="image right"><img src="images/rar.jpg" alt="" /></span></div>
   									<h3>Low-level Firmware</h3>
   									<h4>The firmware we wrote can be viewed in the src folder of our repo.
 
@@ -88,6 +100,9 @@
                   <h4>This is how the software works for the POEtal Turret.</h4>
 
                       <p>
+                        <div class="col-12"><span class="image left"><img src="images/gui.jpg" alt="An image displaying the GUI interface." /></span></div>
+
+
                         <br />1. The user clicks a button on the GUI
                         <br />2. On the backend, the GUI updates the ROS topic /state with what the current state of the robot should be
                         <br />3. On the backend, there is a state controller continuously listening to /state for updates to the robot’s state

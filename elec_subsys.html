@@ -24,6 +24,7 @@
           <nav id="nav">
             <ul>
               <li><a href="index.html" class="button primary">Home</a></li>
+              <li><a href="sys_overview.html" class="primary">System Overview</a></li>
               <li>
                 <a href="#">Subsystems</a>
                 <ul>
@@ -52,110 +53,66 @@
           <div id="main" class="wrapper style1">
             <div class="container">
               <header class="major">
-                <h2>Electrical Subsystem</h2>
-                <p>The electrical subsystem was composed of the turret’s drive, shooting, and hopper motors, the Arduino and Raspberry Pi computers, and the motor driving and audio amplifying board shields.</p>
+                <h2>Electrical subsystem</h2>
+                <p>Our electrical subsystem primarily consists of components that we used to power our high-current motors for the shooter, voltage regulators to power all of our logic components, and components to power our audio subsystem.</p>
               </header>
 
               <!-- Text -->
+							<div class="col-12"><span class="image span"><img src="images/elesplash.jpg" alt="An image displaying turret with the electriacal subsystem exposed" width="1400"/></span></div>
+							<br></br>
                 <section>
                   <header>
-                  <!-- One -->
-                    <section id="one" class="spotlight style1 bottom">
-                      <span class="image fit main"><img src="images/mechanical_homepage.jpg" alt="" /></span>
-                      <div class="content">
-                        <div class="container">
-                          <div class="row">
-                            <div class="col-4 col-12-medium">
-                              <header>
-                                <h2>Sound Board</h2>
-                              </header>
-                            </div>
-                            <div class="col-4 col-12-medium">
-                              <p>We figured that if we fully wanted to capture the character of the sentry turret that inspired our project, we were going to need to give it a voice. We were initially planning on running the audio setup off of a raspberry pi with software for speech recognition and audio playback from a database of voice lines from the game. We soon found, however, that the pi did not have anywhere near the power capacity to run our 2x 10W @ 8 Ohm stereo speakers, so we went back to the drawing board and started designing a breakout shield to house an audio amp as well as an IMU that gave the turret perception of when he was falling over so he could cry out in agony. The shield was fabricated on PCB with the IMU interfacing over SPI and a 3.5mm stereo audio interface to a TPA3136 stereo amplifier IC with filtering on the output to eliminate any significant noise over our direct line to the speakers.</p>
-                              </div>
-                          </div>
-                        </div>
-                      </div>
-                    </section>
+										<div class="col-12"><span class="image left"><img src="images/motor.jpg" alt="An image displaying the CAD of the hardboard frame structure of the turret" /></span></div>
+  									<h3>Powering High-powered Motors</h3>
+  									<p>In order to make a more powerful shooter, we wanted to include motors that had a higher RPM and stall torque, but in order to do this we needed to find another way to power them since the motor shield could only support motors up to 1A but our new motors could draw up to 30A. Our solution to this problem was to purchase MOSFET boards which could support this higher current draw and added extra wiring to connect them to the Arduino for signal and the lipo for power.</p>
+  								</header>
+                </section>
 
+								<section>
+                  <header>
+											<div class="col-12"><span class="image right"><img src="images/5vreg.jpg" alt="" /></span></div>
+										<br></br>
+										<br></br>
+										<h3>Powering Logic Components</h3>
+  									<p>Our logic components - namely the Arduino, Euclid and Pi - required 5 volts to run properly. The voltage regulators we had on hand could support 5V at 3A, but since these components combined drew more than 3A, we needed to include several 5V regulators to sufficiently power all of these components. The LED ring light and the servo both also needed 5 volts but would brown out the Arduino if we tried to power them off the Arduino, so we included another regulator for those components as well. During our project, we ran into issues where these regulators would overheat and output less than 5V causing our components to shut down, so we needed to add fans and heatsinks to actively cool these components down.
+										</p>
+										</header>
+                </section>
 
-                  <!-- Text -->
-                    <section>
-                      <header>
-                      <!-- One -->
-                        <section id="one" class="spotlight style1 bottom">
-                          <span class="image fit main"><img src="images/shooter.JPG" alt="" /></span>
-                          <div class="content">
-                            <div class="container">
-                              <div class="row">
-                                <div class="col-4 col-12-medium">
-                                  <header>
-                                    <h2>Shooter Block</h2>
-                                  </header>
-                                </div>
-                                <div class="col-4 col-12-medium">
-                                  <p>The shooting mechanism was modeled after a dual flywheel launcher, and was comprised of a self-contained 3D printed brick with mounts for the wheels and motors. The mechanism positioned two drums spinning at high velocities on either side of a track for the foam ammunition, driven by 38,000 rpm motors, which could launch the projectiles at up to 50 mph.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </section>
+								<section>
+                  <header>
+											<div class="col-12"><span class="image left"><img src="images/pishield.jpg" alt="" /></span></div>
+										<h3>Audio System</h3>
+  									<p>We figured that if we fully wanted to capture the character of the sentry turret that inspired our project, we were going to need to give it a voice. We were initially planning on running the audio setup off of a raspberry pi with software for speech recognition and audio playback from a database of voice lines from the game. We soon found, however, that the pi did not have anywhere near the power capacity to run our 2x 10W @ 8 Ohm stereo speakers, so we went back to the drawing board and started designing a breakout shield to house an audio amp as well as an IMU that gave the turret perception of when he was falling over so he could cry out in agony. The shield was fabricated on PCB with the IMU interfacing over SPI and a 3.5mm stereo audio interface to a TPA3136 stereo amplifier IC with filtering on the output to eliminate any significant noise over our direct line to the speakers.
+										</p>
+											<div class="col-12"><span class="image right"><img src="images/kicadpcb.png" alt="" /></span></div>
+										<br></br>
+										<br></br>
+										<br></br>
+										<h3></h3>
+									<p>Due to the small size of the surface mount components, precision fabrication techniques were needed to assemble the PCB. Working under a microscope, an exacto was used to paint solder paste on to the pads. Components were also placed under the microscope using tweezers. The PCB was then cooked in the reflow oven to solidify the connections, and all the connections were tested with a multimeter to assure the reflow went as intended and nothing shorted unintentionally.
+										</p>
 
-
-                        <!-- Text -->
-                          <section>
-                            <header>
-                            <!-- One -->
-                              <section id="one" class="spotlight style1 bottom">
-                                <span class="image fit main"><img src="images/hopper.JPG" alt="" /></span>
-                                <div class="content">
-                                  <div class="container">
-                                    <div class="row">
-                                      <div class="col-4 col-12-medium">
-                                        <header>
-                                          <h2>Hopper</h2>
-                                        </header>
-                                      </div>
-                                      <div class="col-4 col-12-medium">
-                                        <p>The shooting mechanism was fed by the hopper, a gravity fed ball storage mechanisms with a custom shaped lead screw mounted into the bottom. The lead screw pulled the foam projectiles from the bottom of the hopper and fed them into the spinning flywheels to fire a ball.
-</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </section>
-
-                              <!-- Text -->
-                                <section>
-                                  <header>
-                                  <!-- One -->
-                                    <section id="one" class="spotlight style1 bottom">
-                                      <span class="image fit main"><img src="images/Shell.JPG" alt="" /></span>
-                                      <div class="content">
-                                        <div class="container">
-                                          <div class="row">
-                                            <div class="col-4 col-12-medium">
-                                              <header>
-                                                <h2>Shell</h2>
-                                              </header>
-                                            </div>
-                                            <div class="col-4 col-12-medium">
-                                              <p>The finishing casing of the turret was made out of thermoformed plastic. To get the clean glossy aesthetic the interior of the plastic was spray painted white. Letting the clear plastic on the outside smooth the color and provide a glossy finish. The shell casings were then mounted to the turret magnetically to facilitate ease of removal to service the interior electronics.
-      </p>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </section>
-
-                  </header>
+										</header>
                 </section>
 
               </div>
             </div>
 
-        
+          <!-- Footer -->
+            <footer id="footer">
+              <ul class="icons">
+                <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+              </ul>
+              <ul class="copyright">
+                <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              </ul>
+            </footer>
 
         </div>
 
