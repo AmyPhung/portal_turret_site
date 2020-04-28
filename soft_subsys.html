@@ -24,7 +24,7 @@
           <nav id="nav">
             <ul>
               <li><a href="index.html" class="button primary">Home</a></li>
-              <li><a href="sys_overview.html" class="primary">System Overview</a></li>
+              <li><a href="sys_overview.html" class="button">System Overview</a></li>
               <li>
                 <a href="#">Subsystems</a>
                 <ul>
@@ -49,35 +49,30 @@
           </nav>
         </header>
 
-
         <!-- Main -->
           <div id="main" class="wrapper style1">
             <div class="container">
               <header class="major">
-                <h2>Software subsystem</h2>
-                <p>The software subsystem was composed of the turret’s
-                  low-level and high-level code to run the robot's motors and
-                  audio system.</p>
+                <h2>Software Subsystem</h2>
+                <p>We had two primary pieces to our software subsystem - low-level firmware that ran on the Arduino and high-level software that ran on the Intel Euclid. The high-level software used ROS to connect the various parts of the project together and dealt with things like person tracking, switching between robot states, and providing an interface for the user to work with while the low-level firmware dealt with sending appropriate PWM values to the motors in order to execute the high-level commands. This page describes in detail the software architecture at work to make our project run. All of our code as well as dependencies and setup instructions can be found on our GitHub.</p>
               </header>
 
-              <style>
-              .center{
-                display: flex;
-                justify-content: center;
-              }
-              </style>
-              <p>We had two primary pieces to our software subsystem - low-level firmware that ran on the Arduino and high-level software that ran on the Intel Euclid. The high-level software used ROS to connect the various parts of the project together and dealt with things like person tracking, switching between robot states, and providing an interface for the user to work with while the low-level firmware dealt with sending appropriate PWM values to the motors in order to execute the high-level commands. This page describes in detail the software architecture at work to make our project run. All of our code as well as dependencies and setup instructions can be found on our GitHub.</p>
-              <div class="center">
-              <ul class="actions">
-                <center><li><a href="https://github.com/AmyPhung/portal_turret" class="button primary">Visit our GitHub!</a></li></center>
-              </ul>
-              </div>
-              <div class="col-12"><span class="image fit"><img src="images/code.jpg" alt=""/></span></div>
+		<header class="major">
+
+							<style>
+							.center{
+								display: flex;
+								justify-content: center;
+							}
+							</style>
+							<div class="center">
+							<ul class="actions">
+								<center><li><a href="https://github.com/AmyPhung/portal_turret" target="_blank" class="button primary">Visit our Github!</a></li></center>
+							</ul>
+							</div>
+		</header>
 
 
-        <!-- Main -->
-          <div id="main" class="wrapper style1">
-            <div class="container">
               <!-- Text -->
                 <section>
                   <header>
@@ -123,7 +118,8 @@
             </div>
 
           <!-- Footer -->
-
+	 <footer id="footer">
+         </footer>
 
         </div>
 

@@ -53,23 +53,26 @@
           <div id="main" class="wrapper style1">
             <div class="container">
               <header class="major">
-                <h2>Electrical subsystem</h2>
+                <h2>Electrical Subsystem</h2>
                 <p>Our electrical subsystem primarily consists of components that we used to power our high-current motors for the shooter, voltage regulators to power all of our logic components, and components to power our audio subsystem.</p>
               </header>
 
               <!-- Text -->
-							<div class="col-12"><span class="image span"><img src="images/elesplash.jpg" alt="An image displaying turret with the electriacal subsystem exposed" width="1400"/></span></div>
+							<div class="col-12"><span class="image span"><img src="images/elesplash.jpg" style="max-width:100%;" alt="An image displaying turret with the electriacal subsystem exposed" width="1400"/></span></div>
 							<br></br>
                 <section>
                   <header>
 										<div class="col-12"><span class="image left"><img src="images/motor.jpg" alt="An image displaying the CAD of the hardboard frame structure of the turret" /></span></div>
-  									<h3>Powering High-powered Motors</h3>
+										<br></br>
+										<h3>Powering High-powered Motors</h3>
   									<p>In order to make a more powerful shooter, we wanted to include motors that had a higher RPM and stall torque, but in order to do this we needed to find another way to power them since the motor shield could only support motors up to 1A but our new motors could draw up to 30A. Our solution to this problem was to purchase MOSFET boards which could support this higher current draw and added extra wiring to connect them to the Arduino for signal and the lipo for power.</p>
   								</header>
                 </section>
 
 								<section>
                   <header>
+										<br></br><br></br>
+
 											<div class="col-12"><span class="image right"><img src="images/5vreg.jpg" alt="" /></span></div>
 										<br></br>
 										<br></br>
@@ -81,7 +84,10 @@
 
 								<section>
                   <header>
+										<br></br>
+										<br></br>
 											<div class="col-12"><span class="image left"><img src="images/pishield.jpg" alt="" /></span></div>
+											<br></br>
 										<h3>Audio System</h3>
   									<p>We figured that if we fully wanted to capture the character of the sentry turret that inspired our project, we were going to need to give it a voice. We were initially planning on running the audio setup off of a raspberry pi with software for speech recognition and audio playback from a database of voice lines from the game. We soon found, however, that the pi did not have anywhere near the power capacity to run our 2x 10W @ 8 Ohm stereo speakers, so we went back to the drawing board and started designing a breakout shield to house an audio amp as well as an IMU that gave the turret perception of when he was falling over so he could cry out in agony. The shield was fabricated on PCB with the IMU interfacing over SPI and a 3.5mm stereo audio interface to a TPA3136 stereo amplifier IC with filtering on the output to eliminate any significant noise over our direct line to the speakers.
 										</p>
@@ -92,8 +98,22 @@
 										<h3></h3>
 									<p>Due to the small size of the surface mount components, precision fabrication techniques were needed to assemble the PCB. Working under a microscope, an exacto was used to paint solder paste on to the pads. Components were also placed under the microscope using tweezers. The PCB was then cooked in the reflow oven to solidify the connections, and all the connections were tested with a multimeter to assure the reflow went as intended and nothing shorted unintentionally.
 										</p>
+<br></br>
+                    <h3>Audio Schematic</h3>
+                    <div class="col-12"><span class="image"><img src="images/schema.png" style="max-width:100%;" alt="" /></span></div>
+                    <br></br>
 
 										</header>
+                </section>
+
+                <section>
+                  <header>
+                    <h3>Full Electrical System</h3>
+                    <div class="col-12"><span class="image"><img src="images/elec_subsys_schematic (1).jpg" alt="" /></span></div>
+                    <br></br>
+
+
+                    </header>
                 </section>
 
               </div>
@@ -101,17 +121,6 @@
 
           <!-- Footer -->
             <footer id="footer">
-              <ul class="icons">
-                <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-                <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-              </ul>
-              <ul class="copyright">
-                <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-              </ul>
             </footer>
 
         </div>
